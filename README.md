@@ -5,7 +5,7 @@ The goal of this project is to create and analyze a dataset of monthly article t
 
 
 ### Licensing 
-The Wikimedia Analytics Pageviews API source code is licensed by [Wikimedia Analytics Pageviews API] (https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use).
+The Wikimedia Analytics Pageviews API source code is licensed by [Wikimedia Analytics Pageviews API](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use).
 The starter code is adpated from Dr. McDonald's example notebook, wp_article_views_example.ipynb which is licensed [CC-BY](https://creativecommons.org/licenses/by/4.0/). The following changes were made: 
 - Added my own UW Net ID
 - Added additional packages and changed the comments to reflect multiple imports 

@@ -16,26 +16,44 @@ All other code not designated as starter code from Dr. McDonald or copied from C
 
 ### Files
 The notebook that contains all project code, HCD-HW1.ipynb, creates the following files:
+JSON Files:
 - rare-disease_monthly_desktop_2015070100-2024093000
   - This is a JSON file of the monthly page traffic for the specified pages in rare-disease_cleaned.AUG.2024.csv accessed by desktop for the the date rage July 1, 2015 through September 30, 2024.
-  - Data Schema:
+- rare-disease_monthly_mobile_2015070100-2024093000
+  - This is a JSON file of the monthly page traffic for the specified pages in rare-disease_cleaned.AUG.2024.csv accessed by mobile-app or mobile-web for the the date rage July 1, 2015 through September 30, 2024.
+- rare-disease_monthly_cumulative_2015070100-2024093000
+  - This is a JSON file of the monthly page traffic for the specified pages in rare-disease_cleaned.AUG.2024.csv accessed by desktop, mobile-app, or mobile-web for the the date rage July 1, 2015 through September 30, 2024
+  Data Schema for JSON files:
+  The JSON files contain a dictionary where the keys are the disease name (str type) from the csv file and the value for each key is a list of dictionaries of the returned value of the API request for each timestamp that   page view data is available for. The 'access' field of the returned value of the API request is not included in the JSON. The dictionaries for the returned value of the API request contain the keys which are all type str and the values are all str except the 'views' value is an int. 
     ```
     {
-    "Disease_Name_1": [
-        {
-            "timestamp": "YYYYMMDDHH",
-            "views": Integer
+    'Disease Name 1': [
+        {  'project': 'en.wikipedia', 
+           'article': 'article title',
+           'granularity': 'monthly',
+           'timestamp': 'YYYYMMDDHH',
+           'agent': 'user',
+           'views': int
         },
         ...
     ],
-    "Disease_Name_2": [
-        {
-            "timestamp": "YYYYMMDDHH",
-            "views": Integer
+    'Disease Name 2': [
+        {  'project': 'en.wikipedia', 
+           'article': 'article title',
+           'granularity': 'monthly',
+           'timestamp': 'YYYYMMDDHH',
+           'agent': 'user',
+           'views': int
         },
         ...
     ]
     }
     ```
+    PNG Files:
+    - Max_min_avg_views.png: This is a graph containing time series for the articles that have the highest average page requests and the lowest average page requests for desktop access and mobile access over the timeframe given for start and end timestamps, here it is the timeframe of the data, July, 2015 through September, 2024.
+    - top10_peak_views.png: This is a graph showing the the top 10 article pages by largest number page views at one timestamp (a peak in views) over the entire time series for both mobile and desktop platforms over a specified
+    time period. The mobile data is represented with solid lines and the desktop data is shown with
+    dashed lines. The graph is saved as a PNG image.
+    - 10_least_months.png: This is a graph showing the 10 articles with the least months of available data for both mobile and desktop platforms.
     
 
